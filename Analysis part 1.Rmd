@@ -5,6 +5,7 @@ date: "25/07/2018"
 output:
   html_document: default
   pdf_document: default
+  md_document: default
 ---
 
 
@@ -18,7 +19,7 @@ data(trees)
 
 Nous allons nous intéresser au dataset "Trees"
 
-```{r}
+```{r echo=FALSE}
 head(trees)
 tail(trees)
 colnames(trees)
@@ -41,14 +42,14 @@ les variables Girth, Height et Volume sont des variables quantitatives
 On a déterminés les stats descriptives des 3 variables à travers
 la médiane, la moyenne, le minimum et le maximum , le 1er quartile et le 3e quartile.
 
-```{r}
+```{r echo=TRUE}
 dim(trees)
 ```
 
 ## nuage de points
 
 
-```{r}
+```{r echo=TRUE}
 plot(trees, col = 1:5)
 ```
 
@@ -60,7 +61,7 @@ Essayons de voir la correlation entre les différentes variables
 cor(trees)
 ```
 
-```{r}
+```{r echo=FALSE}
 hist(trees$Height, col = "green", main = "distribution de la hauteur")
 hist(trees$Girth, col = "green", main = "distribution de la circonférence")
 hist(trees$Volume, col = "green", main = "distribution du volume")
@@ -70,7 +71,7 @@ Voici la distribution de la hauteur de l'arbre.
 
 Visualisation du dataset
 
-```{r}
+```{r echo=TRUE}
 library(ggplot2)
 ggplot(data = trees) +
   geom_point(aes(x = trees$Volume, y = trees$Height), colour = "yellow") +
@@ -83,7 +84,7 @@ ggplot(data = trees) +
 
 Boites à moustaches des stats descriptives pour les 3 variables
 
-```{r}
+```{r echo=TRUE}
 boxplot(trees, col = 1:3)
 ```
 
