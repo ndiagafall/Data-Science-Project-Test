@@ -1,1 +1,1 @@
-Plots & titanic dataset projetc
+Plots & titanic dataset project
